@@ -10,6 +10,13 @@ var users = require('./routes/users');
 
 var app = express();
 
+// Global
+global.Eppico = {}
+
+//initializers values in global B2AsdsApi
+Eppico.env = app.get("env")
+require("./initializers/mysql")()
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
