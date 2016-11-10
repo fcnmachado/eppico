@@ -1,5 +1,6 @@
 var express = require('express');
 var router = express.Router();
+//const User = global.Eppico.mysqldb.User
 
 /* GET users listing. */
 router.get('/', function(req, res, next) {
