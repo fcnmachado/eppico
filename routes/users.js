@@ -8,9 +8,15 @@ const wrap = require("co-express")
 
 /* GET users listing. */
 router.get('/',  wrap(function*(req, res) {
-	yield User.findAll().then(function(users) {
-  		res.send(users)
-	})
+	let users = yield User.findAll()
+  	res.json(users)
+}))
+
+/* GET users listing. */
+router.post('/',  wrap(function*(req, res) {
+	let user = yield User.create(req.body)
+	res.status(201)
+	res.json(user)
 }))
 
 module.exports = router
