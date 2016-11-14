@@ -1,10 +1,16 @@
-var express = require('express');
-var router = express.Router();
-//const User = global.Eppico.mysqldb.User
+"use strict"
+
+const express = require('express')
+const router = express.Router()
+const User = Eppico.mysqldb.User
+
+const wrap = require("co-express")
 
 /* GET users listing. */
-router.get('/', function(req, res, next) {
-  res.send('respond with a resource');
-});
+router.get('/',  wrap(function*(req, res) {
+	yield User.findAll().then(function(users) {
+  		res.send(users)
+	})
+}))
 
-module.exports = router;
+module.exports = router
