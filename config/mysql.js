@@ -20,7 +20,7 @@ module.exports = {
     logging: null,
     password: "studio85",
     database: "eppico_prod",
-    host: "b2ads-production.cenfzwich3mq.sa-east-1.rds.amazonaws.com",
+    host: "eppicodev.cogiuqao2srf.us-east-1.rds.amazonaws.com",
     dialect: "mysql"
   }
 }
