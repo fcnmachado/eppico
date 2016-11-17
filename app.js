@@ -6,7 +6,8 @@ var cookieParser = require('cookie-parser')
 var app = express()
 
 //initializers
-require("./initializers/global")  
+require("./initializers/global")
+require("./initializers/secret")()
 require("./initializers/mysql")()
 
 //Middleware Set
@@ -16,6 +17,7 @@ app.use("/api", middlewareSet(require("./config/whitelist-routes")))
 
 var index = require('./routes/index')
 var users = require('./routes/users')
+var authenticationRoute = require('./routes/authentication')
 
 // view engine setup
 app.set('public/views', path.join(__dirname, 'public/views'))
@@ -36,6 +38,7 @@ app.get('/', function(req, res) {
     res.sendFile('./public/views/index.html', {"root": __dirname}) // load the single view file (angular will handle the page changes on the front-end)
 })
 
+app.use("/api/auth", authenticationRoute)
 app.use('/api/users', users)
 
 // catch 404 and forward to error handler

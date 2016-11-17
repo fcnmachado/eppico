@@ -10,7 +10,6 @@ module.exports = (whitelist) =>{
 
     function authSuccess(decoded,req,next) {
       req.decoded = decoded    
-      req.account_id = decoded._doc.account_id
       next()
     }
 

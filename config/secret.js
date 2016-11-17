@@ -1,6 +1,6 @@
 module.exports = {
-		development : "saiqueesuatafarel" ,
-		test : "saiqueesuatafarel" ,
-		staging : "saiqueesuatafarel" ,
-		production : "saiqueesuatafarel"
+		development : "flamengomelhoremaisamado" ,
+		test : "flamengomelhoremaisamado" ,
+		staging : "flamengomelhoremaisamado" ,
+		production : "flamengomelhoremaisamado"
 	}

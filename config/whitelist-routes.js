@@ -1,4 +1,5 @@
 module.exports = [
-	"POST:/api/users",
+	"GET:/api/users",
+	"POST:/api/users/admin",
 	"POST:/api/auth"
 ]
