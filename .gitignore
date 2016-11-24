@@ -42,4 +42,7 @@ jspm_packages
 !.elasticbeanstalk/*.global.yml
 
 # Configs
-configs
+config
+config/*
+/config
+/config/*
